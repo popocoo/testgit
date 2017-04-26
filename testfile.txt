@@ -11,3 +11,11 @@ by jenny
 ca02
 
 ca03
+
+ca-    git revert HEAD
+    git push origin master
+注意，revert和reset的区别:
+
+revert是放弃指定提交的修改，但是会生成一次新的提交，需要填写提交注释，以前的历史记录都在，而reset是指将HEAD指针指到指定提交，历史记录中不会出现放弃的提交记录。如果还没有理解的话，我们做如下测试：
+假设我们有以下三次提交记录：
+test
