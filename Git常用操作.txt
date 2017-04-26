@@ -1,0 +1,34 @@
+打标签
+git标签分为两种类型：轻量标签和附注标签。轻量标签是指向提交对象的引用，附注标签则是仓库中的一个独立对象。建议使用附注标签。
+# 创建轻量标签
+$ git tag v0.1.2-light
+
+# 创建附注标签
+$ git tag -a v0.1.2 -m “0.1.2版本”
+
+切换到标签
+与切换分支命令相同，用git checkout [tagname]
+
+误打或需要修改标签时，需要先将标签删除，再打新标签。
+$ git tag -d v0.1.2 # 删除标签
+
+
+# 补打标签
+$ git tag -a v0.1.1 9fbc3d0
+
+
+标签发布
+通常的git push不会将标签对象提交到git服务器，我们需要进行显式的操作：
+$ git push origin v0.1.2 # 将v0.1.2标签提交到git服务器
+$ git push origin --tags # 将本地所有标签一次性提交到git服务器
+
+删除远程tag
+git push origin --delete tag <tagname>
+
+-------------Branch----
+删除本地 Branch
+git branch -D rury-local
+删除远程 Branch
+git push origin --delete <branch-name>
+
+
